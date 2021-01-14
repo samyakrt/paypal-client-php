@@ -1,0 +1,54 @@
+{
+    "name": "samyakrt/paypal-client-php",
+    "description": "package that allow app to create invoice on the behalf of users.",
+    "keywords": [
+        "samyakrt",
+        "paypal-client-php"
+    ],
+    "homepage": "https://github.com/samyakrt/paypal-client-php",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Samyak Tuladhar",
+            "email": "tuladharsamyak@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Samyakrt\\PaypalClientPhp\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Samyakrt\\PaypalClientPhp\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Samyakrt\\PaypalClientPhp\\PaypalClientPhpServiceProvider"
+            ],
+            "aliases": {
+                "PaypalClientPhp": "Samyakrt\\PaypalClientPhp\\PaypalClientPhpFacade"
+            }
+        }
+    }
+}
