@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         verbose="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="Test Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src/</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="tap" target="build/report.tap"/>
+        <log type="junit" target="build/report.junit.xml"/>
+        <log type="coverage-html" target="build/coverage" charset="UTF-8" yui="true" highlight="true"/>
+        <log type="coverage-text" target="build/coverage.txt"/>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+    </logging>
+    <php>
+        <server name="CLIENT_ID" value="ARV1L05CD5pQVQAB9nDJNQeDDzZtw7p-xSFfEyp0XunJ2w024tDln4ySjEfXV51MHj0cwUnOe6A_FDPo" />
+        <server name="CLIENT_SECRET" value="EJF-H9ARHR4zQPCONQW9dPi-1VXH9VjHKjDgj6NzlxlIHSJ1tuZW6HTyvDxFaTD7gVDmgE6rQ_c-4dSN" />
+        <server name="SCOPES" value="openid profile email address https://uri.paypal.com/services/invoicing" />
+        <server name="MODE" value="sandbox" />
+        <server name="AUTH_REDIRECT_URI" value="http://test.com"  />
+    </php>
+</phpunit>

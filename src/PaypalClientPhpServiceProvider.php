@@ -24,6 +24,8 @@ class PaypalClientPhpServiceProvider extends ServiceProvider
                 __DIR__.'/../config/config.php' => config_path('paypal-client-php.php'),
             ], 'config');
 
+            $this->mergeConfigFrom(__DIR__.'/../config/config.php','paypal');
+
             // Publishing the views.
             /*$this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/paypal-client-php'),
